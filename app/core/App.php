@@ -9,7 +9,7 @@ class App
     public function __construct()
     {
         $url = $this->parseURL();
-        var_dump($url);
+        // var_dump($url);
 
         //setup controller
         if (isset($url[0]) && file_exists("../app/controllers/{$url[0]}.php")) {
