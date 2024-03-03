@@ -1,5 +1,5 @@
 <?php
-
+include "../app/core/Database.php";
 class Blog_model
 {
     private $table = "blog";
@@ -20,5 +20,16 @@ class Blog_model
         $this->db->query("SELECT * FROM " . $this->table . " WHERE id=:id");
         $this->db->bind("id", $id);
         return $this->db->resultSingle();
+    }
+    public function buatArtikel($data)
+    {
+        $query = "INSERT INTO blog VALUES
+        (' ', :judul, :tulisan, :penulis)";
+        $this->db->query($query);
+        $this->db->bind("judul", $data["judul"]);
+        $this->db->bind("tulisan", $data["tulisan"]);
+        $this->db->bind("penulis", $data["penulis"]);
+        $this->db->execute();
+        return $this->db->rowCount();
     }
 }
