@@ -22,6 +22,10 @@ class Blog extends Controller
         if ($this->model("Blog_model")->buatArtikel($_POST) > 0) {
             header("Location: " . BASE_URL . "/blog");
             exit;
+        } else {
+            Flasher::setFlash('gagal', 'ditambahkan', 'danger');
+            header("Location: " . BASE_URL . "/blog");
+            exit;
         }
     }
 }

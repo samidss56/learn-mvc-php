@@ -1,6 +1,13 @@
+<?php
+if (!session_id()) session_start();
+require_once "../app/init.php";
+$new = new App;
+?>
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-6">
+            <?php Flasher::flash(); ?>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
                 Buat Artikel
             </button>
