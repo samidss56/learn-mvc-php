@@ -36,16 +36,16 @@ $new = new App;
             <div class="modal-body">
                 <form action="<?= BASE_URL; ?>/blog/tambah" method="post">
                     <div class="form-group">
+                        <label for="penulis">Nama Penulis</label>
+                        <input type="text" class="form-control" id="penulis" name="penulis">
+                    </div>
+                    <div class="form-group">
                         <label for="judul">Judul Artikel</label>
                         <input type="text" class="form-control" id="judul" name="judul">
                     </div>
                     <div class="form-group">
                         <label for="tulisan">Isi Artikel</label>
                         <textarea class="form-control" id="tulisan" rows="5" name="tulisan"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="penulis">Nama Penulis</label>
-                        <input type="text" class="form-control" id="penulis" name="penulis">
                     </div>
             </div>
             <div class="modal-footer">

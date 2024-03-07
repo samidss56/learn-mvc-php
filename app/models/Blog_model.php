@@ -23,8 +23,7 @@ class Blog_model
     }
     public function buatArtikel($data)
     {
-        $query = "INSERT INTO blog VALUES
-        (' ', :judul, :tulisan, :penulis)";
+        $query = "INSERT INTO blog (judul, tulisan, penulis) VALUES (:judul, :tulisan, :penulis)";
         $this->db->query($query);
         $this->db->bind("judul", $data["judul"]);
         $this->db->bind("tulisan", $data["tulisan"]);
